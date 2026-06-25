@@ -45,7 +45,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(454, 105);
+            this.textBox2.Location = new System.Drawing.Point(461, 133);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 22);
             this.textBox2.TabIndex = 1;
@@ -62,6 +62,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(331, 195);
             this.label1.Name = "label1";
