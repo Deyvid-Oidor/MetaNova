@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="MetaNova/MetaNova.csproj" />
+  <Project Path="Biblioteca1_Modelo/Biblioteca1_Modelo.csproj" Id="6c706d15-a444-4b42-8589-e1f9e3996e4c" />
+  <Project Path="Biblioteca2_Datos/Biblioteca2_Datos.csproj" Id="79d60be0-7050-4768-af0b-7b6df7270d5d" />
+  <Project Path="Biblioteca3_Negocio/Biblioteca3_Negocio.csproj" Id="4352869d-b595-4d7f-8054-d47297fbc400" />
+  <Project Path="MetaNova/MetaNova.csproj" Id="1f984cad-b3ab-4d52-ab74-07accb35e880" />
 </Solution>
