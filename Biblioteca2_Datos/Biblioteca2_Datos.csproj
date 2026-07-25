@@ -49,5 +49,11 @@
     <Compile Include="ServicioDetalleDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteca1_Modelo\Biblioteca1_Modelo.csproj">
+      <Project>{6c706d15-a444-4b42-8589-e1f9e3996e4c}</Project>
+      <Name>Biblioteca1_Modelo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
