@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Biblioteca1_Modelo
 {
-    internal class Refaccion
+    public class Refaccion
     {
+        public int IdRefaccion { get; set; }
+        public string Nombre { get; set; }
+        public decimal PrecioUnitario { get; set; }
+        public int CantDisponible { get; set; }
     }
 }

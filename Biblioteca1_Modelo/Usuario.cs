@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Biblioteca1_Modelo
 {
-    internal class Usuario
+    public class Usuario
     {
+        public int IdUsuario { get; set; }
+        public string Nombre { get; set; }
+        public string Rol { get; set; }
+        public string Contrasena { get; set; }
     }
 }
