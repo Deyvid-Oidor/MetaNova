@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca2_Datos
 {
-    internal class ServicioDetalleDAL
+    public class ServicioDetalleDAL
     {
         // Inserta una refacción usada dentro de una orden de servicio
         public int Insertar(ServicioDetalle d)
@@ -46,7 +46,7 @@ namespace Biblioteca2_Datos
                     "SELECT sd.id_detalle, sd.id_servicio, sd.id_refaccion, sd.cantidad, sd.precio_unitario, r.nombre " +
                     "FROM servicio_detalle sd " +
                     "INNER JOIN refacciones r ON sd.id_refaccion = r.id_refaccion " +
-                    "WHERE sd.id_servicio = " + idServicio);
+                    "WHERE sd.id_servicio = @idServicio");
 
                 MySqlDataReader dr = cn.ejecuta_reader();
 

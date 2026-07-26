@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca2_Datos
 {
-    internal class RefaccionDAL
+    public class RefaccionDAL
     {
         // Inserta una nueva refacción en el inventario
         public int Insertar(Refaccion r)

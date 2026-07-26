@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca2_Datos
 {
-    internal class EquipoDAL
+    public class EquipoDAL
     {
         // Inserta un nuevo equipo asociado a un cliente
         public int Insertar(Equipo eq)
@@ -47,7 +47,7 @@ namespace Biblioteca2_Datos
                 cn.construye_reader(
                     "SELECT e.id_equipo, e.id_cliente, e.id_Marca, e.modelo, e.numero_serie, m.nombre_marca " +
                     "FROM equipos e INNER JOIN marca m ON e.id_Marca = m.id_Marca " +
-                    "WHERE e.id_cliente = " + idCliente);
+                    "WHERE e.id_cliente = @idCliente");
 
                 MySqlDataReader dr = cn.ejecuta_reader();
 
