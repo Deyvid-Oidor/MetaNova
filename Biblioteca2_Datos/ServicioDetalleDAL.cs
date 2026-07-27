@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca2_Datos
 {
-    internal class ServicioDetalleDAL
+    public class ServicioDetalleDAL
     {
         // Inserta una refacción usada dentro de una orden de servicio
         public int Insertar(ServicioDetalle d)

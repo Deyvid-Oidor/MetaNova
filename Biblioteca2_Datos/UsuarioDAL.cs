@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca2_Datos
 {
-    internal class UsuarioDAL
+    public class UsuarioDAL
     {
         // Regresa la lista completa de usuarios (técnicos y administrador)
         // se usa para llenar el combo "Técnico Responsable" en la pantalla Nueva Orden

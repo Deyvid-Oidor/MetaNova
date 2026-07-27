@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca2_Datos
 {
-    internal class ServicioDAL
+    public class ServicioDAL
     {
         // Inserta una nueva orden de servicio y regresa el id_servicio que le tocó
         // (usamos LAST_INSERT_ID() para saber el id recién generado, ya que luego
