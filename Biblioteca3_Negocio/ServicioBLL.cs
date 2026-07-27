@@ -102,5 +102,5 @@ namespace Biblioteca3_Negocio
         {
             return new ServicioDAL().ListarTiposServicio();
         }
-    }
+    } // Fin class
 }
