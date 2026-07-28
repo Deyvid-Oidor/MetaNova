@@ -26,5 +26,20 @@ namespace MetaNova
         {
 
         }
+
+        private void pnlContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Login_Resize(object sender, EventArgs e)
+        {
+            pnlContenedor.Location = new Point((this.ClientSize.Width - pnlContenedor.Width) / 2, (this.ClientSize.Height - pnlContenedor.Height) / 2);
+        }
+
+        private void lblSubtitulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
