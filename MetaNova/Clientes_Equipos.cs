@@ -82,5 +82,10 @@ namespace MetaNova
             txtCorreo.Clear();
             txtNombre.Focus(); 
         }
+
+        private void dvgClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
