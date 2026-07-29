@@ -19,7 +19,7 @@ namespace Biblioteca2_Datos
             if (cn.conectar())
             {
                 // Comando INSERT con parámetros, para evitar inyección SQL
-                MySqlCommand cmd = cn.construye_command(
+                var cmd = cn.construye_command(
                     "INSERT INTO clientes (nombre, apPaterno, apMaterno, num_telefono, correo) " +
                     "VALUES (@nombre, @apPaterno, @apMaterno, @telefono, @correo)");
 

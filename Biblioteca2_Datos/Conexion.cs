@@ -28,7 +28,7 @@ namespace Biblioteca2_Datos
             public bool conectar()
             {
                 conectr = new MySqlConnection();
-                conectr.ConnectionString = "Server=localhost; Database=metanova; Uid=root; Pwd=; Port=3306;SslMode=None;";
+                conectr.ConnectionString = "Server=localhost; Database=metanova; Uid=root; Pwd=; Port=3306;SslMode=Disabled;";
 
                 try
                 {

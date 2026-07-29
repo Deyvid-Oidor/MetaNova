@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// Agregar referencias
+using Biblioteca1_Modelo;
+using Biblioteca2_Datos;
+using Biblioteca3_Negocio;
 
 namespace MetaNova
 {
@@ -74,18 +78,18 @@ namespace MetaNova
             button4.ForeColor = Color.Black;
         }
 
+        
+        //private void button5_MouseEnter(object sender, EventArgs e)
+        //{
+        //    button5.BackColor = ColorTranslator.FromHtml("#1E293B");
+        //    button5.ForeColor = Color.White;
+        //}
 
-        private void button5_MouseEnter(object sender, EventArgs e)
-        {
-            button5.BackColor = ColorTranslator.FromHtml("#1E293B");
-            button5.ForeColor = Color.White;
-        }
-
-        private void button5_MouseLeave(object sender, EventArgs e)
-        {
-            button5.BackColor = Color.FromArgb(241, 245, 249); // Color base
-            button5.ForeColor = Color.Black;
-        }
+        //private void button5_MouseLeave(object sender, EventArgs e)
+        //{
+        //    button5.BackColor = Color.FromArgb(241, 245, 249); // Color base
+        //    button5.ForeColor = Color.Black;
+        //}
 
         private void btnSalir_MouseEnter(object sender, EventArgs e)
         {
@@ -103,6 +107,11 @@ namespace MetaNova
         {
             // Cierra la aplicación por completo (o puedes usar this.Close(); si solo quieres volver al Login)
             Application.Exit();
+        }
+
+        private void Menu_Principal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

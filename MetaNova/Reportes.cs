@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// Agregar referencias
+using Biblioteca1_Modelo;
+using Biblioteca2_Datos;
+using Biblioteca3_Negocio;
 
 namespace MetaNova
 {
@@ -15,6 +19,11 @@ namespace MetaNova
         public Reportes()
         {
             InitializeComponent();
+        }
+
+        private void Reportes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
