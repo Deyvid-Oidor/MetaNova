@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Biblioteca3_Negocio
 {
-    internal class EquipoBLL
+    public class EquipoBLL
     {
         // Valida los datos y guarda un equipo nuevo asociado a un cliente
         public void GuardarEquipo(Equipo eq)

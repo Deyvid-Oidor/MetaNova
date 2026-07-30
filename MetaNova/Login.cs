@@ -50,5 +50,32 @@ namespace MetaNova
         {
 
         }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            string nombre = txtUsuario.Text.Trim();
+            string contrasena = txtContrasena.Text.Trim();
+
+            UsuarioBLL usuarioBll = new UsuarioBLL();
+            Usuario usuarioLogueado = usuarioBll.Login(nombre, contrasena);
+
+            if (usuarioLogueado != null)
+            {
+                MessageBox.Show($"¡Bienvenido, {usuarioLogueado.Nombre}!", "Acceso Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+               
+                this.DialogResult = DialogResult.OK;
+
+               
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos.", "Error de Autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtContrasena.Clear();
+                txtContrasena.Focus();
+            }
+        }
     }
 }
+

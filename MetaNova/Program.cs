@@ -16,7 +16,15 @@ namespace MetaNova
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Clientes_Equipos());
+
+            // Creamos la ventana de Login
+            Login frmLogin = new Login();
+
+            // Muestra el Login como Diálogo. Si el resultado es OK, abre el Menú Principal
+            if (frmLogin.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new Menu_Principal());
+            }
         }
     }
 }

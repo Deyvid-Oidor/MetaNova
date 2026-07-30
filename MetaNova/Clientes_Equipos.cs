@@ -51,7 +51,7 @@ namespace MetaNova
         {
             try
             {
-                // 1. Armar el objeto Cliente con los nombres de las cajas de texto
+                // Armar el objeto Cliente con los nombres de las cajas de texto
                 Cliente cliente = new Cliente()
                 {
                     Nombre = txtNombre.Text.Trim(),
@@ -61,7 +61,7 @@ namespace MetaNova
                     Correo = txtCorreo.Text.Trim()
                 };
 
-                // 2. Instanciar la BLL y guardar
+                // Instanciar la BLL y guardar
                 ClienteBLL clienteBll = new ClienteBLL();
                 clienteBll.GuardarCliente(cliente);
 
@@ -84,6 +84,54 @@ namespace MetaNova
         }
 
         private void dvgClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // Validar que se haya seleccionado un cliente en la tabla (DataGridView)
+            if (dvgClientes.CurrentRow == null || dvgClientes.CurrentRow.Index < 0)
+            {
+                MessageBox.Show("Selecciona un cliente de la tabla para poder eliminarlo.", "Aviso");
+                return;
+            }
+
+            // Obtener el ID del cliente seleccionado
+            int idCliente = Convert.ToInt32(dvgClientes.CurrentRow.Cells[0].Value);
+
+            // Confirmar con el usuario antes de borrar
+            DialogResult respuesta = MessageBox.Show(
+                "¿Estás seguro de que deseas eliminar este cliente?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (respuesta == DialogResult.Yes)
+            {
+                try
+                {
+                    //  Llamar a BLL 
+                    ClienteBLL clienteBll = new ClienteBLL();
+                    clienteBll.EliminarCliente(idCliente);
+
+                    // Refrescar la tabla y limpiar campos
+                    CargarClientes();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al intentar eliminar: " + ex.Message, "Error");
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void pnlBuscador_Paint(object sender, PaintEventArgs e)
         {
 
         }

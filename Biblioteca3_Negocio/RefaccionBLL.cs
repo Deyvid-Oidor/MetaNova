@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Biblioteca3_Negocio
 {
-    internal class RefaccionBLL
+    public class RefaccionBLL
     {
         // Valida los datos y guarda una refacción nueva en el inventario
         public void GuardarRefaccion(Refaccion r)
@@ -76,6 +76,36 @@ namespace Biblioteca3_Negocio
             return false;
         }
 
+        public void ActualizarRefaccion(Refaccion r)
+        {
+            if (r.IdRefaccion <= 0)
+            {
+                MessageBox.Show("Selecciona una refacción válida para modificar.", "Aviso");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(r.Nombre))
+            {
+                MessageBox.Show("El nombre no puede estar vacío.", "Aviso");
+                return;
+            }
+
+            if (r.PrecioUnitario <= 0 || r.CantDisponible < 0)
+            {
+                MessageBox.Show("Revisa que los montos de precio y stock sean válidos.", "Aviso");
+                return;
+            }
+
+            // Llama al método de tu DAL pasando los parámetros
+            int afectados = new RefaccionDAL().Actualizar(r.IdRefaccion, r.Nombre, r.PrecioUnitario, r.CantDisponible);
+
+            if (afectados > 0)
+                MessageBox.Show("Refacción actualizada correctamente.", "Aviso");
+            else
+                MessageBox.Show("No se pudo actualizar la refacción.", "Aviso");
+        }
+
+
         // Descuenta stock de una refacción (se usa después de crear una orden de servicio)
         public void DescontarStock(int idRefaccion, int cantidadUsada)
         {
@@ -88,7 +118,7 @@ namespace Biblioteca3_Negocio
                     int nuevoStock = r.CantDisponible - cantidadUsada;
                     if (nuevoStock < 0) nuevoStock = 0; // por seguridad, nunca negativo
 
-                    new RefaccionDAL().ActualizarStock(idRefaccion, nuevoStock);
+                    new RefaccionDAL().Actualizar(r.IdRefaccion, r.Nombre, r.PrecioUnitario, nuevoStock);
                     return;
                 }
             }
@@ -104,5 +134,6 @@ namespace Biblioteca3_Negocio
             else
                 MessageBox.Show("No se pudo eliminar la refacción.", "Aviso");
         }
+
     } // Fin class 
 }

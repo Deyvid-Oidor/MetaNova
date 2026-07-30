@@ -14,5 +14,19 @@ namespace Biblioteca1_Modelo
         public string Modelo { get; set; }
         public string NumeroSerie { get; set; }
         public string NombreMarca { get; set; } // extra, solo para mostrar en pantalla
+
+        public string DescripcionCompleta
+        {
+            get
+            {
+                string marca = this.NombreMarca;
+                string modelo = this.Modelo;
+
+               
+                string resultado = marca + " " + modelo;
+
+                return resultado.Trim();
+            }
+        }    
     }
 }

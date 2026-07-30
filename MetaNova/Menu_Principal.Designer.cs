@@ -31,10 +31,9 @@
             this.pnlMenuLateral = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPantallaInventario = new System.Windows.Forms.Button();
+            this.btnPantallaServicios = new System.Windows.Forms.Button();
+            this.btnPantallaClientes = new System.Windows.Forms.Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.btnPantallaReportes = new System.Windows.Forms.Button();
             this.pnlMenuLateral.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.pnlContenido.SuspendLayout();
@@ -58,12 +58,12 @@
             // pnlMenuLateral
             // 
             this.pnlMenuLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.pnlMenuLateral.Controls.Add(this.btnPantallaReportes);
             this.pnlMenuLateral.Controls.Add(this.btnSalir);
             this.pnlMenuLateral.Controls.Add(this.label1);
-            this.pnlMenuLateral.Controls.Add(this.button4);
-            this.pnlMenuLateral.Controls.Add(this.button3);
-            this.pnlMenuLateral.Controls.Add(this.button2);
-            this.pnlMenuLateral.Controls.Add(this.button1);
+            this.pnlMenuLateral.Controls.Add(this.btnPantallaInventario);
+            this.pnlMenuLateral.Controls.Add(this.btnPantallaServicios);
+            this.pnlMenuLateral.Controls.Add(this.btnPantallaClientes);
             this.pnlMenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenuLateral.Location = new System.Drawing.Point(0, 0);
             this.pnlMenuLateral.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -101,78 +101,62 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "METANOVA";
             // 
-            // button4
+            // btnPantallaInventario
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
-            this.button4.Location = new System.Drawing.Point(0, 186);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(270, 62);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Inventario";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            this.button4.MouseEnter += new System.EventHandler(this.button4_MouseEnter);
+            this.btnPantallaInventario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPantallaInventario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPantallaInventario.FlatAppearance.BorderSize = 0;
+            this.btnPantallaInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPantallaInventario.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPantallaInventario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
+            this.btnPantallaInventario.Location = new System.Drawing.Point(0, 124);
+            this.btnPantallaInventario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPantallaInventario.Name = "btnPantallaInventario";
+            this.btnPantallaInventario.Size = new System.Drawing.Size(270, 62);
+            this.btnPantallaInventario.TabIndex = 4;
+            this.btnPantallaInventario.Text = "Inventario";
+            this.btnPantallaInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPantallaInventario.UseVisualStyleBackColor = true;
+            this.btnPantallaInventario.Click += new System.EventHandler(this.button4_Click);
+            this.btnPantallaInventario.MouseEnter += new System.EventHandler(this.button4_MouseEnter);
             // 
-            // button3
+            // btnPantallaServicios
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
-            this.button3.Location = new System.Drawing.Point(0, 124);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(270, 62);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Servicios";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
+            this.btnPantallaServicios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPantallaServicios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPantallaServicios.FlatAppearance.BorderSize = 0;
+            this.btnPantallaServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPantallaServicios.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPantallaServicios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
+            this.btnPantallaServicios.Location = new System.Drawing.Point(0, 62);
+            this.btnPantallaServicios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPantallaServicios.Name = "btnPantallaServicios";
+            this.btnPantallaServicios.Size = new System.Drawing.Size(270, 62);
+            this.btnPantallaServicios.TabIndex = 3;
+            this.btnPantallaServicios.Text = "Servicios";
+            this.btnPantallaServicios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPantallaServicios.UseVisualStyleBackColor = true;
+            this.btnPantallaServicios.Click += new System.EventHandler(this.btnPantallaServicios_Click);
+            this.btnPantallaServicios.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
             // 
-            // button2
+            // btnPantallaClientes
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
-            this.button2.Location = new System.Drawing.Point(0, 62);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(270, 62);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Equipos";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(270, 62);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Clientes";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.btnPantallaClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPantallaClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPantallaClientes.FlatAppearance.BorderSize = 0;
+            this.btnPantallaClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPantallaClientes.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPantallaClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
+            this.btnPantallaClientes.Location = new System.Drawing.Point(0, 0);
+            this.btnPantallaClientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPantallaClientes.Name = "btnPantallaClientes";
+            this.btnPantallaClientes.Size = new System.Drawing.Size(270, 62);
+            this.btnPantallaClientes.TabIndex = 1;
+            this.btnPantallaClientes.Text = "Clientes";
+            this.btnPantallaClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPantallaClientes.UseVisualStyleBackColor = true;
+            this.btnPantallaClientes.Click += new System.EventHandler(this.btnPantallaClientes_Click);
+            this.btnPantallaClientes.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             // 
             // pnlHeader
             // 
@@ -232,7 +216,7 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(34, 221);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 221);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -315,6 +299,24 @@
             this.button6.Text = "Nuevo Servicio";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // btnPantallaReportes
+            // 
+            this.btnPantallaReportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPantallaReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPantallaReportes.FlatAppearance.BorderSize = 0;
+            this.btnPantallaReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPantallaReportes.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPantallaReportes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
+            this.btnPantallaReportes.Location = new System.Drawing.Point(0, 186);
+            this.btnPantallaReportes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPantallaReportes.Name = "btnPantallaReportes";
+            this.btnPantallaReportes.Size = new System.Drawing.Size(270, 62);
+            this.btnPantallaReportes.TabIndex = 7;
+            this.btnPantallaReportes.Text = "Reportes";
+            this.btnPantallaReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPantallaReportes.UseVisualStyleBackColor = true;
+            this.btnPantallaReportes.Click += new System.EventHandler(this.btnPantallaReportes_Click);
+            // 
             // Menu_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -345,10 +347,9 @@
 
         private System.Windows.Forms.Panel pnlMenuLateral;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPantallaInventario;
+        private System.Windows.Forms.Button btnPantallaServicios;
+        private System.Windows.Forms.Button btnPantallaClientes;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label label3;
@@ -364,5 +365,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnPantallaReportes;
     }
 }

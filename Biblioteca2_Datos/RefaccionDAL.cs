@@ -63,7 +63,7 @@ namespace Biblioteca2_Datos
 
         // Actualiza el stock disponible de una refacción (se usa al editar o al descontar
         // piezas cuando se agregan a una orden de servicio)
-        public int ActualizarStock(int idRefaccion, int nuevaCantidad)
+        public int Actualizar(int idRefaccion, string nombre, decimal precioUnitario, int nuevaCantidad)
         {
             Conexion cn = new Conexion();
             int afectados = 0;
@@ -71,8 +71,10 @@ namespace Biblioteca2_Datos
             if (cn.conectar())
             {
                 MySqlCommand cmd = cn.construye_command(
-                    "UPDATE refacciones SET cant_disponible=@cantidad WHERE id_refaccion=@id");
+                    "UPDATE refacciones SET nombre=@nombre, precio_unitario=@precio, cant_disponible=@cantidad WHERE id_refaccion=@id");
 
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@precio", precioUnitario);
                 cmd.Parameters.AddWithValue("@cantidad", nuevaCantidad);
                 cmd.Parameters.AddWithValue("@id", idRefaccion);
 

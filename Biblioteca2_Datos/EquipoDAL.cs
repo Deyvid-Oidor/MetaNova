@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace Biblioteca2_Datos
 {
@@ -43,13 +44,16 @@ namespace Biblioteca2_Datos
 
             if (cn.conectar())
             {
-                // Hacemos join con marca solo para traer el nombre y no nada más el Id
-                cn.construye_reader(
+                
+                MySqlCommand cmd = cn.construye_command(
                     "SELECT e.id_equipo, e.id_cliente, e.id_Marca, e.modelo, e.numero_serie, m.nombre_marca " +
                     "FROM equipos e INNER JOIN marca m ON e.id_Marca = m.id_Marca " +
                     "WHERE e.id_cliente = @idCliente");
 
-                MySqlDataReader dr = cn.ejecuta_reader();
+               
+                cmd.Parameters.AddWithValue("@idCliente", idCliente);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
 
                 if (dr != null)
                 {

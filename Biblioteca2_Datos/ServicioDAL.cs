@@ -91,6 +91,60 @@ namespace Biblioteca2_Datos
             return lista;
         }
 
+
+        public List<Servicio> Buscar(string criterio)
+        {
+            List<Servicio> lista = new List<Servicio>();
+            Conexion cn = new Conexion();
+
+            if (cn.conectar())
+            {
+                // Consulta SQL con INNER JOIN para traer los datos descriptivos de las otras tablas
+                MySqlCommand cmd = cn.construye_command(
+                    "SELECT s.id_servicio, s.id_equipo, s.id_TipoServicio, s.id_usuario, s.id_Estado_Equipo, " +
+                    "s.fecha_ingreso, s.fecha_entrega, s.costo_mano_obra, " +
+                    "c.nombre AS nombre_cliente, t.descripcion, es.nombre_estado " +
+                    "FROM servicios s " +
+                    "INNER JOIN equipos e ON s.id_equipo = e.id_equipo " +
+                    "INNER JOIN clientes c ON e.id_cliente = c.id_cliente " +
+                    "INNER JOIN tipo_servicio t ON s.id_TipoServicio = t.id_TipoServicio " +
+                    "INNER JOIN estado es ON s.id_Estado_Equipo = es.id_Estado_Equipo " +
+                    "WHERE CAST(s.id_servicio AS CHAR) LIKE @criterio OR c.nombre LIKE @criterio " +
+                    "ORDER BY s.id_servicio DESC");
+
+                cmd.Parameters.AddWithValue("@criterio", "%" + criterio + "%");
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null)
+                {
+                    while (dr.Read())
+                    {
+                        Servicio s = new Servicio();
+                        s.IdServicio = dr.GetInt32("id_servicio");
+                        s.IdEquipo = dr.GetInt32("id_equipo");
+                        s.IdTipoServicio = dr.GetInt32("id_TipoServicio");
+                        s.IdUsuario = dr.GetInt32("id_usuario");
+                        s.IdEstadoEquipo = dr.GetInt32("id_Estado_Equipo");
+                        s.FechaIngreso = dr.GetDateTime("fecha_ingreso");
+                        s.FechaEntrega = dr.IsDBNull(dr.GetOrdinal("fecha_entrega")) ? (System.DateTime?)null : dr.GetDateTime("fecha_entrega");
+                        s.CostoManoObra = dr.GetDecimal("costo_mano_obra");
+
+                        // 👇 Aquí asignamos las columnas traídas desde las otras tablas
+                        s.NombreCliente = dr.GetString("nombre_cliente");
+                        s.DescripcionTipoServicio = dr.GetString("descripcion");
+                        s.NombreEstado = dr.GetString("nombre_estado");
+
+                        lista.Add(s);
+                    }
+                    dr.Close();
+                }
+                cn.desconectar();
+            }
+            return lista;
+        }
+
+
         // Cambia el estado de una orden de servicio (por ejemplo de "En Reparación" a "Reparado")
         public int ActualizarEstado(int idServicio, int idEstadoNuevo)
         {
@@ -105,7 +159,7 @@ namespace Biblioteca2_Datos
                 cmd.Parameters.AddWithValue("@idEstado", idEstadoNuevo);
                 cmd.Parameters.AddWithValue("@id", idServicio);
 
-                afectados = cn.ejecutanonquery();
+                afectados = cmd.ExecuteNonQuery();
                 cn.desconectar();
             }
             return afectados;

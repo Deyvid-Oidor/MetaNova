@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtManoObra = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.cmbUsuario = new System.Windows.Forms.ComboBox();
+            this.cmbTecnico = new System.Windows.Forms.ComboBox();
             this.cmbTipoServicio = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,9 +47,9 @@
             this.pnlDerecho = new System.Windows.Forms.Panel();
             this.pnlTotales = new System.Windows.Forms.Panel();
             this.btnGuardarOrden = new System.Windows.Forms.Button();
-            this.lblTotalPagar = new System.Windows.Forms.Label();
-            this.lblCostoManoObra = new System.Windows.Forms.Label();
-            this.lblSumaRefacciones = new System.Windows.Forms.Label();
+            this.lbTotalPagar = new System.Windows.Forms.Label();
+            this.lbCostoManoObra = new System.Windows.Forms.Label();
+            this.lbSumaRefacciones = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -63,6 +62,7 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.pnlDerecho.SuspendLayout();
             this.pnlTotales.SuspendLayout();
@@ -72,14 +72,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.txtManoObra);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.cmbEstado);
-            this.panel1.Controls.Add(this.cmbUsuario);
+            this.panel1.Controls.Add(this.cmbTecnico);
             this.panel1.Controls.Add(this.cmbTipoServicio);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -91,31 +90,23 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 841);
+            this.panel1.Size = new System.Drawing.Size(566, 841);
             this.panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(172, 306);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 29);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Buscar Cliente";
-            this.button1.UseVisualStyleBackColor = true;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtManoObra
             // 
-            this.txtManoObra.Location = new System.Drawing.Point(214, 709);
+            this.txtManoObra.Location = new System.Drawing.Point(214, 586);
             this.txtManoObra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtManoObra.Name = "txtManoObra";
             this.txtManoObra.Size = new System.Drawing.Size(235, 26);
             this.txtManoObra.TabIndex = 14;
+            this.txtManoObra.TextChanged += new System.EventHandler(this.txtCostoManoObra_TextChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 712);
+            this.label8.Location = new System.Drawing.Point(12, 586);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(160, 20);
             this.label8.TabIndex = 13;
@@ -124,7 +115,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 624);
+            this.label7.Location = new System.Drawing.Point(23, 520);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 20);
             this.label7.TabIndex = 12;
@@ -133,7 +124,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 450);
+            this.label6.Location = new System.Drawing.Point(14, 390);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(166, 20);
             this.label6.TabIndex = 11;
@@ -142,7 +133,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 552);
+            this.label5.Location = new System.Drawing.Point(23, 456);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 20);
             this.label5.TabIndex = 10;
@@ -151,25 +142,39 @@
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(189, 620);
+            this.cmbEstado.Items.AddRange(new object[] {
+            "Pendiente",
+            "En Reparación",
+            "Reparado",
+            "Entregado",
+            "Cancelado"});
+            this.cmbEstado.Location = new System.Drawing.Point(173, 520);
             this.cmbEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(276, 28);
             this.cmbEstado.TabIndex = 8;
             // 
-            // cmbUsuario
+            // cmbTecnico
             // 
-            this.cmbUsuario.FormattingEnabled = true;
-            this.cmbUsuario.Location = new System.Drawing.Point(241, 446);
-            this.cmbUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cmbUsuario.Name = "cmbUsuario";
-            this.cmbUsuario.Size = new System.Drawing.Size(208, 28);
-            this.cmbUsuario.TabIndex = 7;
+            this.cmbTecnico.FormattingEnabled = true;
+            this.cmbTecnico.Location = new System.Drawing.Point(228, 390);
+            this.cmbTecnico.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbTecnico.Name = "cmbTecnico";
+            this.cmbTecnico.Size = new System.Drawing.Size(208, 28);
+            this.cmbTecnico.TabIndex = 7;
+            this.cmbTecnico.SelectedIndexChanged += new System.EventHandler(this.cmbUsuario_SelectedIndexChanged);
             // 
             // cmbTipoServicio
             // 
             this.cmbTipoServicio.FormattingEnabled = true;
-            this.cmbTipoServicio.Location = new System.Drawing.Point(241, 549);
+            this.cmbTipoServicio.Items.AddRange(new object[] {
+            "Cambio de Pantalla",
+            "Cambio de Batería",
+            "Reparación de Purto de Carga",
+            "Mantenimiento por Humedad",
+            "Reparación de Cámara",
+            "Actualización de Software / Liberación"});
+            this.cmbTipoServicio.Location = new System.Drawing.Point(228, 456);
             this.cmbTipoServicio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbTipoServicio.Name = "cmbTipoServicio";
             this.cmbTipoServicio.Size = new System.Drawing.Size(195, 28);
@@ -180,7 +185,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
-            this.label4.Location = new System.Drawing.Point(69, 361);
+            this.label4.Location = new System.Drawing.Point(57, 312);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(347, 30);
             this.label4.TabIndex = 5;
@@ -223,6 +228,7 @@
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(276, 36);
             this.cmbCliente.TabIndex = 1;
+            this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.cmbCliente_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -243,18 +249,19 @@
             this.pnlDerecho.Controls.Add(this.label9);
             this.pnlDerecho.Controls.Add(this.dgvDetalleServicio);
             this.pnlDerecho.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDerecho.Location = new System.Drawing.Point(472, 0);
+            this.pnlDerecho.Location = new System.Drawing.Point(566, 0);
             this.pnlDerecho.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlDerecho.Name = "pnlDerecho";
-            this.pnlDerecho.Size = new System.Drawing.Size(802, 841);
+            this.pnlDerecho.Size = new System.Drawing.Size(801, 841);
             this.pnlDerecho.TabIndex = 1;
+            this.pnlDerecho.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDerecho_Paint);
             // 
             // pnlTotales
             // 
             this.pnlTotales.Controls.Add(this.btnGuardarOrden);
-            this.pnlTotales.Controls.Add(this.lblTotalPagar);
-            this.pnlTotales.Controls.Add(this.lblCostoManoObra);
-            this.pnlTotales.Controls.Add(this.lblSumaRefacciones);
+            this.pnlTotales.Controls.Add(this.lbTotalPagar);
+            this.pnlTotales.Controls.Add(this.lbCostoManoObra);
+            this.pnlTotales.Controls.Add(this.lbSumaRefacciones);
             this.pnlTotales.Controls.Add(this.label13);
             this.pnlTotales.Controls.Add(this.label12);
             this.pnlTotales.Controls.Add(this.label11);
@@ -281,34 +288,37 @@
             this.btnGuardarOrden.Text = "GUARDAR";
             this.btnGuardarOrden.UseVisualStyleBackColor = false;
             // 
-            // lblTotalPagar
+            // lbTotalPagar
             // 
-            this.lblTotalPagar.AutoSize = true;
-            this.lblTotalPagar.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPagar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.lblTotalPagar.Location = new System.Drawing.Point(241, 258);
-            this.lblTotalPagar.Name = "lblTotalPagar";
-            this.lblTotalPagar.Size = new System.Drawing.Size(105, 45);
-            this.lblTotalPagar.TabIndex = 6;
-            this.lblTotalPagar.Text = "$0.00";
+            this.lbTotalPagar.AutoSize = true;
+            this.lbTotalPagar.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalPagar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.lbTotalPagar.Location = new System.Drawing.Point(241, 258);
+            this.lbTotalPagar.Name = "lbTotalPagar";
+            this.lbTotalPagar.Size = new System.Drawing.Size(105, 45);
+            this.lbTotalPagar.TabIndex = 6;
+            this.lbTotalPagar.Text = "$0.00";
             // 
-            // lblCostoManoObra
+            // lbCostoManoObra
             // 
-            this.lblCostoManoObra.AutoSize = true;
-            this.lblCostoManoObra.Location = new System.Drawing.Point(252, 198);
-            this.lblCostoManoObra.Name = "lblCostoManoObra";
-            this.lblCostoManoObra.Size = new System.Drawing.Size(49, 20);
-            this.lblCostoManoObra.TabIndex = 5;
-            this.lblCostoManoObra.Text = "$0.00";
+            this.lbCostoManoObra.AutoSize = true;
+            this.lbCostoManoObra.Location = new System.Drawing.Point(249, 189);
+            this.lbCostoManoObra.Name = "lbCostoManoObra";
+            this.lbCostoManoObra.Size = new System.Drawing.Size(49, 20);
+            this.lbCostoManoObra.TabIndex = 5;
+            this.lbCostoManoObra.Text = "$0.00";
+            this.lbCostoManoObra.TextChanged += new System.EventHandler(this.lbCostoManoObra_Click);
+            this.lbCostoManoObra.Click += new System.EventHandler(this.lbCostoManoObra_Click_2);
             // 
-            // lblSumaRefacciones
+            // lbSumaRefacciones
             // 
-            this.lblSumaRefacciones.AutoSize = true;
-            this.lblSumaRefacciones.Location = new System.Drawing.Point(249, 95);
-            this.lblSumaRefacciones.Name = "lblSumaRefacciones";
-            this.lblSumaRefacciones.Size = new System.Drawing.Size(49, 20);
-            this.lblSumaRefacciones.TabIndex = 4;
-            this.lblSumaRefacciones.Text = "$0.00";
+            this.lbSumaRefacciones.AutoSize = true;
+            this.lbSumaRefacciones.Location = new System.Drawing.Point(249, 95);
+            this.lbSumaRefacciones.Name = "lbSumaRefacciones";
+            this.lbSumaRefacciones.Size = new System.Drawing.Size(49, 20);
+            this.lbSumaRefacciones.TabIndex = 4;
+            this.lbSumaRefacciones.Text = "$0.00";
+            this.lbSumaRefacciones.Click += new System.EventHandler(this.lbSumaRefacciones_Click);
             // 
             // label13
             // 
@@ -351,26 +361,28 @@
             this.btnQuitarRefaccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btnQuitarRefaccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuitarRefaccion.ForeColor = System.Drawing.Color.White;
-            this.btnQuitarRefaccion.Location = new System.Drawing.Point(465, 255);
+            this.btnQuitarRefaccion.Location = new System.Drawing.Point(462, 312);
             this.btnQuitarRefaccion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnQuitarRefaccion.Name = "btnQuitarRefaccion";
             this.btnQuitarRefaccion.Size = new System.Drawing.Size(179, 51);
             this.btnQuitarRefaccion.TabIndex = 3;
             this.btnQuitarRefaccion.Text = "Quitar";
             this.btnQuitarRefaccion.UseVisualStyleBackColor = false;
+            this.btnQuitarRefaccion.Click += new System.EventHandler(this.btnQuitarRefaccion_Click);
             // 
             // btnAgregarRefaccion
             // 
             this.btnAgregarRefaccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
             this.btnAgregarRefaccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarRefaccion.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarRefaccion.Location = new System.Drawing.Point(150, 255);
+            this.btnAgregarRefaccion.Location = new System.Drawing.Point(146, 312);
             this.btnAgregarRefaccion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAgregarRefaccion.Name = "btnAgregarRefaccion";
             this.btnAgregarRefaccion.Size = new System.Drawing.Size(192, 51);
             this.btnAgregarRefaccion.TabIndex = 2;
             this.btnAgregarRefaccion.Text = "Agregar Refacción";
             this.btnAgregarRefaccion.UseVisualStyleBackColor = false;
+            this.btnAgregarRefaccion.Click += new System.EventHandler(this.btnAgregarRefaccion_Click);
             // 
             // label9
             // 
@@ -385,14 +397,14 @@
             // 
             this.dgvDetalleServicio.BackgroundColor = System.Drawing.Color.White;
             this.dgvDetalleServicio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleServicio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleServicio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetalleServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleServicio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre_Refacción,
@@ -406,8 +418,9 @@
             this.dgvDetalleServicio.RowHeadersWidth = 51;
             this.dgvDetalleServicio.RowTemplate.Height = 24;
             this.dgvDetalleServicio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalleServicio.Size = new System.Drawing.Size(626, 110);
+            this.dgvDetalleServicio.Size = new System.Drawing.Size(626, 153);
             this.dgvDetalleServicio.TabIndex = 0;
+            this.dgvDetalleServicio.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleServicio_CellValueChanged);
             // 
             // Nombre_Refacción
             // 
@@ -437,12 +450,19 @@
             this.Column4.Name = "Column4";
             this.Column4.Width = 125;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(221, 181);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(8, 26);
+            this.textBox1.TabIndex = 8;
+            // 
             // Servicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(1274, 841);
+            this.ClientSize = new System.Drawing.Size(1367, 841);
             this.Controls.Add(this.pnlDerecho);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -474,7 +494,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbEstado;
-        private System.Windows.Forms.ComboBox cmbUsuario;
+        private System.Windows.Forms.ComboBox cmbTecnico;
         private System.Windows.Forms.ComboBox cmbTipoServicio;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -486,18 +506,18 @@
         private System.Windows.Forms.Button btnAgregarRefaccion;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel pnlTotales;
-        private System.Windows.Forms.Label lblTotalPagar;
-        private System.Windows.Forms.Label lblCostoManoObra;
-        private System.Windows.Forms.Label lblSumaRefacciones;
+        private System.Windows.Forms.Label lbTotalPagar;
+        private System.Windows.Forms.Label lbCostoManoObra;
+        private System.Windows.Forms.Label lbSumaRefacciones;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnGuardarOrden;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Refacción;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

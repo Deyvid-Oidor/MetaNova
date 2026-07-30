@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Biblioteca3_Negocio
 {
-    internal class ServicioBLL
+    public class ServicioBLL
     {
         // Crea una orden de servicio completa: valida, guarda el servicio,
         // guarda cada refacción usada y descuenta el stock correspondiente.
@@ -102,5 +102,17 @@ namespace Biblioteca3_Negocio
         {
             return new ServicioDAL().ListarTiposServicio();
         }
+
+        public List<Servicio> BuscarServicios(string criterio)
+        {
+            if (string.IsNullOrWhiteSpace(criterio))
+            {
+                return ListarServicios(); // Si está vacío, usa tu Listar() original
+            }
+
+            return new ServicioDAL().Buscar(criterio.Trim());
+        }
+
+
     } // Fin class
 }

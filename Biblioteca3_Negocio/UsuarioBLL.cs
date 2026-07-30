@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Biblioteca3_Negocio
 {
-    internal class UsuarioBLL
+    public class UsuarioBLL
     {
         // Regresa la lista de usuarios (técnicos y administrador), para llenar
         // el combo "Técnico Responsable" en la pantalla de Nueva Orden.
@@ -34,6 +34,12 @@ namespace Biblioteca3_Negocio
                 MessageBox.Show("Usuario o contraseña incorrectos.", "Aviso");
 
             return usuario;
+        }
+
+        public List<Usuario> ListarTecnicos()
+        {
+            UsuarioDAL dal = new UsuarioDAL();
+            return dal.Listar();
         }
 
     } // Fin class

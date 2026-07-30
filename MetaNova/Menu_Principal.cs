@@ -1,4 +1,9 @@
-﻿using System;
+﻿// Agregar referencias
+using Biblioteca1_Modelo;
+using Biblioteca2_Datos;
+using Biblioteca3_Negocio;
+using MySqlX.XDevAPI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,10 +12,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-// Agregar referencias
-using Biblioteca1_Modelo;
-using Biblioteca2_Datos;
-using Biblioteca3_Negocio;
 
 namespace MetaNova
 {
@@ -23,59 +24,60 @@ namespace MetaNova
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            Inventario frmClientes = new Inventario();
+            frmClientes.Show();
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
-            button1.BackColor = ColorTranslator.FromHtml("#1E293B");
-            button1.ForeColor = Color.White;
+            btnPantallaClientes.BackColor = ColorTranslator.FromHtml("#1E293B");
+            btnPantallaClientes.ForeColor = Color.White;
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
             // Cambia estos valores por los colores originales que tiene tu botón
-            button1.BackColor = Color.FromArgb(241, 245, 249);
-            button1.ForeColor = Color.Black;
+            btnPantallaClientes.BackColor = Color.FromArgb(241, 245, 249);
+            btnPantallaClientes.ForeColor = Color.Black;
         }
 
 
-        private void button2_MouseEnter(object sender, EventArgs e)
-        {
-            button2.BackColor = ColorTranslator.FromHtml("#1E293B");
-            button2.ForeColor = Color.White;
-        }
+        //private void button2_MouseEnter(object sender, EventArgs e)
+        //{
+        //    button2.BackColor = ColorTranslator.FromHtml("#1E293B");
+        //    button2.ForeColor = Color.White;
+        //}
 
 
-        private void button2_MouseLeave(object sender, EventArgs e)
-        {
-            button2.BackColor = Color.FromArgb(241, 245, 249); // Color base
-            button2.ForeColor = Color.Black;
-        }
+        //private void button2_MouseLeave(object sender, EventArgs e)
+        //{
+        //    button2.BackColor = Color.FromArgb(241, 245, 249); // Color base
+        //    button2.ForeColor = Color.Black;
+        //}
 
         private void button3_MouseEnter(object sender, EventArgs e)
         {
-            button3.BackColor = ColorTranslator.FromHtml("#1E293B");
-            button3.ForeColor = Color.White;
+            btnPantallaServicios.BackColor = ColorTranslator.FromHtml("#1E293B");
+            btnPantallaServicios.ForeColor = Color.White;
         }
 
         private void button3_MouseLeave(object sender, EventArgs e)
         {
-            button3.BackColor = Color.FromArgb(241, 245, 249); // Color base
-            button3.ForeColor = Color.Black;
+            btnPantallaServicios.BackColor = Color.FromArgb(241, 245, 249); // Color base
+            btnPantallaServicios.ForeColor = Color.Black;
         }
 
 
         private void button4_MouseEnter(object sender, EventArgs e)
         {
-            button4.BackColor = ColorTranslator.FromHtml("#1E293B");
-            button4.ForeColor = Color.White;
+            btnPantallaInventario.BackColor = ColorTranslator.FromHtml("#1E293B");
+            btnPantallaInventario.ForeColor = Color.White;
         }
 
         private void button4_MouseLeave(object sender, EventArgs e)
         {
-            button4.BackColor = Color.FromArgb(241, 245, 249); // Color base
-            button4.ForeColor = Color.Black;
+            btnPantallaInventario.BackColor = Color.FromArgb(241, 245, 249); // Color base
+            btnPantallaInventario.ForeColor = Color.Black;
         }
 
         
@@ -112,6 +114,24 @@ namespace MetaNova
         private void Menu_Principal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPantallaServicios_Click(object sender, EventArgs e)
+        {
+            Servicio frmServicios = new Servicio();
+            frmServicios.Show();
+        }
+
+        private void btnPantallaClientes_Click(object sender, EventArgs e)
+        {
+            Clientes_Equipos frmClientes = new Clientes_Equipos();
+            frmClientes.Show();
+        }
+
+        private void btnPantallaReportes_Click(object sender, EventArgs e)
+        {
+            Reportes frmClientes = new Reportes();
+            frmClientes.Show();
         }
     }
 }
