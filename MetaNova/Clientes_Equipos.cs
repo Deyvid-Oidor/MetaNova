@@ -135,5 +135,33 @@ namespace MetaNova
         {
 
         }
+
+        private void Clientes_Equipos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+
+
+
+
+            // Buscamos si el Menú Principal ya está abierto o creamos uno nuevo para regresar a él
+            // O simplemente mostramos de nuevo el menú anterior:
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm is Menu_Principal)
+                {
+                    frm.Show();
+                    return;
+                }
+            }
+
+            // Por seguridad, si por algo no estuviera abierto, abrimos uno nuevo:
+            Menu_Principal menu = new Menu_Principal();
+            menu.Show();
+
+
+
+
+
+        }
     }
 }

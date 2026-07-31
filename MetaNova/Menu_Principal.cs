@@ -163,5 +163,35 @@ namespace MetaNova
         {
 
         }
+
+        private void btnIrClientes_Click(object sender, EventArgs e)
+        {
+
+            Clientes_Equipos frm = new Clientes_Equipos();
+            frm.Show(); // Abre la ventana
+            this.Hide(); // Oculta el menú principal mientras estás en el módulo
+
+        }
+
+        private void btnIrServicio_Click(object sender, EventArgs e)
+        {
+            Servicio frm = new Servicio();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnIrInventario_Click(object sender, EventArgs e)
+        {
+            Inventario frm = new Inventario();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnIrUsuarios_Click(object sender, EventArgs e)
+        {
+            Usuarios frm = new Usuarios();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

@@ -16,5 +16,33 @@ namespace MetaNova
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+        private void Usuarios_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Buscamos si el Menú Principal ya está abierto para volver a mostrarlo
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm is Menu_Principal)
+                {
+                    frm.Show();
+                    return;
+                }
+            }
+
+            // Si por alguna razón no estuviera en memoria, abrimos una nueva instancia del menú
+            Menu_Principal menu = new Menu_Principal();
+            menu.Show();
+        }
+
+
+
     }
 }

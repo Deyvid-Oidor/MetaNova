@@ -73,6 +73,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.label1.Location = new System.Drawing.Point(282, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 16);
@@ -81,6 +82,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(65)))));
             this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.txtBuscar);
             this.panel1.Controls.Add(this.label3);
@@ -92,16 +94,21 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.btnBuscar.Location = new System.Drawing.Point(530, 67);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
             // 
+            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.txtBuscar.Location = new System.Drawing.Point(261, 75);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(184, 22);
@@ -112,6 +119,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.label3.Location = new System.Drawing.Point(25, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(208, 16);
@@ -121,6 +129,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.label2.Location = new System.Drawing.Point(22, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 16);
@@ -129,6 +138,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(65)))));
             this.panel2.Controls.Add(this.dgvReportes);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(29, 203);
@@ -224,6 +234,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.label4.Location = new System.Drawing.Point(37, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(314, 16);
@@ -232,6 +243,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(65)))));
             this.panel3.Controls.Add(this.btnActualizarEstado);
             this.panel3.Controls.Add(this.cmbCambiarEstado);
             this.panel3.Controls.Add(this.label7);
@@ -243,16 +255,20 @@
             // 
             // btnActualizarEstado
             // 
+            this.btnActualizarEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
+            this.btnActualizarEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.btnActualizarEstado.Location = new System.Drawing.Point(438, 78);
             this.btnActualizarEstado.Name = "btnActualizarEstado";
             this.btnActualizarEstado.Size = new System.Drawing.Size(133, 47);
             this.btnActualizarEstado.TabIndex = 3;
             this.btnActualizarEstado.Text = "Actualizar Estado";
-            this.btnActualizarEstado.UseVisualStyleBackColor = true;
+            this.btnActualizarEstado.UseVisualStyleBackColor = false;
             this.btnActualizarEstado.Click += new System.EventHandler(this.btnActualizarEstado_Click);
             // 
             // cmbCambiarEstado
             // 
+            this.cmbCambiarEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.cmbCambiarEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.cmbCambiarEstado.FormattingEnabled = true;
             this.cmbCambiarEstado.Items.AddRange(new object[] {
             "Pendiente",
@@ -268,6 +284,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.label7.Location = new System.Drawing.Point(40, 87);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 16);
@@ -277,6 +294,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.label6.Location = new System.Drawing.Point(25, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(286, 16);
@@ -285,6 +303,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(65)))));
             this.panel4.Controls.Add(this.btnSalir);
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.label8);
@@ -295,6 +314,7 @@
             // 
             // btnSalir
             // 
+            this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.btnSalir.Location = new System.Drawing.Point(459, 38);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(172, 39);
@@ -304,16 +324,20 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.button2.Location = new System.Drawing.Point(40, 54);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(257, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Imprimir / Generar Reporte PDF";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.label8.Location = new System.Drawing.Point(17, 19);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(113, 16);
@@ -324,7 +348,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(210)))), ((int)(((byte)(149)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(1200, 788);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);

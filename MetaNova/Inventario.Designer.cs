@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlFormInventario = new System.Windows.Forms.Panel();
             this.btnGuardarRefaccion = new System.Windows.Forms.Button();
             this.txtCantidadDisponible = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@
             // 
             // pnlFormInventario
             // 
-            this.pnlFormInventario.BackColor = System.Drawing.Color.White;
+            this.pnlFormInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(65)))));
             this.pnlFormInventario.Controls.Add(this.dgvInventario);
             this.pnlFormInventario.Controls.Add(this.label3);
             this.pnlFormInventario.Controls.Add(this.btnEliminarPieza);
@@ -76,8 +76,9 @@
             // 
             // btnGuardarRefaccion
             // 
-            this.btnGuardarRefaccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnGuardarRefaccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
             this.btnGuardarRefaccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarRefaccion.FlatAppearance.BorderSize = 0;
             this.btnGuardarRefaccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarRefaccion.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarRefaccion.ForeColor = System.Drawing.Color.White;
@@ -91,6 +92,8 @@
             // 
             // txtCantidadDisponible
             // 
+            this.txtCantidadDisponible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.txtCantidadDisponible.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.txtCantidadDisponible.Location = new System.Drawing.Point(341, 258);
             this.txtCantidadDisponible.Name = "txtCantidadDisponible";
             this.txtCantidadDisponible.Size = new System.Drawing.Size(320, 22);
@@ -98,6 +101,8 @@
             // 
             // txtPrecioUnitario
             // 
+            this.txtPrecioUnitario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.txtPrecioUnitario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.txtPrecioUnitario.Location = new System.Drawing.Point(360, 190);
             this.txtPrecioUnitario.Name = "txtPrecioUnitario";
             this.txtPrecioUnitario.Size = new System.Drawing.Size(320, 22);
@@ -106,6 +111,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.label5.Location = new System.Drawing.Point(451, 228);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 16);
@@ -115,6 +121,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.label4.Location = new System.Drawing.Point(460, 156);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(116, 16);
@@ -123,7 +130,9 @@
             // 
             // txtNombreRefaccion
             // 
+            this.txtNombreRefaccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
             this.txtNombreRefaccion.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreRefaccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.txtNombreRefaccion.Location = new System.Drawing.Point(360, 100);
             this.txtNombreRefaccion.Name = "txtNombreRefaccion";
             this.txtNombreRefaccion.Size = new System.Drawing.Size(320, 30);
@@ -132,6 +141,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.label2.Location = new System.Drawing.Point(435, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(193, 16);
@@ -151,7 +161,7 @@
             // 
             // btnLimpiarRefaccion
             // 
-            this.btnLimpiarRefaccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnLimpiarRefaccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(65)))));
             this.btnLimpiarRefaccion.ForeColor = System.Drawing.Color.White;
             this.btnLimpiarRefaccion.Location = new System.Drawing.Point(482, 418);
             this.btnLimpiarRefaccion.Name = "btnLimpiarRefaccion";
@@ -163,6 +173,7 @@
             // 
             // pnlListadoInventario
             // 
+            this.pnlListadoInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
             this.pnlListadoInventario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlListadoInventario.Location = new System.Drawing.Point(1250, 0);
             this.pnlListadoInventario.Name = "pnlListadoInventario";
@@ -184,6 +195,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.label3.Location = new System.Drawing.Point(380, 552);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(260, 16);
@@ -192,7 +204,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(65)))));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.Location = new System.Drawing.Point(503, 336);
             this.btnModificar.Name = "btnModificar";
@@ -206,14 +218,14 @@
             // 
             this.dgvInventario.BackgroundColor = System.Drawing.Color.White;
             this.dgvInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInventario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -273,6 +285,7 @@
             this.Name = "Inventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventario";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Inventario_FormClosed);
             this.Load += new System.EventHandler(this.Inventario_Load);
             this.pnlFormInventario.ResumeLayout(false);
             this.pnlFormInventario.PerformLayout();
