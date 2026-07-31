@@ -94,5 +94,10 @@ namespace MetaNova
         {
 
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
