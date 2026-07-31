@@ -43,16 +43,16 @@
             this.lblServiciosActivos = new System.Windows.Forms.Label();
             this.lblTotalClientes = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnIrServicio = new System.Windows.Forms.Button();
-            this.btnIrInventario = new System.Windows.Forms.Button();
+            this.btnPantallaServicios = new System.Windows.Forms.Button();
+            this.btnPantallaInventario = new System.Windows.Forms.Button();
             this.btnIrUsuarios = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblEstadoBD = new System.Windows.Forms.Label();
             this.btnActualizarDatos = new System.Windows.Forms.Button();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.btnIrClientes = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnPantallaClientes = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -71,9 +71,10 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(772, 50);
+            this.panel1.Size = new System.Drawing.Size(885, 50);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -122,15 +123,18 @@
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Location = new System.Drawing.Point(12, 89);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 50);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(523, 408);
+            this.panel2.Size = new System.Drawing.Size(885, 811);
             this.panel2.TabIndex = 1;
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(65)))));
-            this.groupBox2.Controls.Add(this.btnIrServicio);
+            this.groupBox2.Controls.Add(this.btnPantallaServicios);
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.groupBox2.Location = new System.Drawing.Point(285, 29);
             this.groupBox2.Name = "groupBox2";
@@ -141,8 +145,10 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(65)))));
-            this.groupBox3.Controls.Add(this.btnIrInventario);
+            this.groupBox3.Controls.Add(this.btnPantallaInventario);
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.groupBox3.Location = new System.Drawing.Point(27, 222);
             this.groupBox3.Name = "groupBox3";
@@ -153,6 +159,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(65)))));
             this.groupBox4.Controls.Add(this.btnIrUsuarios);
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
@@ -166,7 +174,7 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(65)))));
-            this.groupBox5.Controls.Add(this.btnCerrarSesion);
+            this.groupBox5.Controls.Add(this.btnSalir);
             this.groupBox5.Controls.Add(this.btnActualizarDatos);
             this.groupBox5.Controls.Add(this.lblEstadoBD);
             this.groupBox5.Controls.Add(this.label7);
@@ -224,36 +232,37 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.groupBox5);
-            this.panel3.Location = new System.Drawing.Point(12, 522);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 563);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(779, 298);
+            this.panel3.Size = new System.Drawing.Size(885, 298);
             this.panel3.TabIndex = 2;
             // 
-            // btnIrServicio
+            // btnPantallaServicios
             // 
-            this.btnIrServicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.btnIrServicio.FlatAppearance.BorderSize = 0;
-            this.btnIrServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIrServicio.Location = new System.Drawing.Point(64, 90);
-            this.btnIrServicio.Name = "btnIrServicio";
-            this.btnIrServicio.Size = new System.Drawing.Size(75, 23);
-            this.btnIrServicio.TabIndex = 0;
-            this.btnIrServicio.Text = "button2";
-            this.btnIrServicio.UseVisualStyleBackColor = false;
-            this.btnIrServicio.Click += new System.EventHandler(this.btnIrServicio_Click);
+            this.btnPantallaServicios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
+            this.btnPantallaServicios.FlatAppearance.BorderSize = 0;
+            this.btnPantallaServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPantallaServicios.Location = new System.Drawing.Point(64, 90);
+            this.btnPantallaServicios.Name = "btnPantallaServicios";
+            this.btnPantallaServicios.Size = new System.Drawing.Size(75, 23);
+            this.btnPantallaServicios.TabIndex = 0;
+            this.btnPantallaServicios.Text = "button2";
+            this.btnPantallaServicios.UseVisualStyleBackColor = false;
+            this.btnPantallaServicios.Click += new System.EventHandler(this.btnIrServicio_Click);
             // 
-            // btnIrInventario
+            // btnPantallaInventario
             // 
-            this.btnIrInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.btnIrInventario.FlatAppearance.BorderSize = 0;
-            this.btnIrInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIrInventario.Location = new System.Drawing.Point(23, 66);
-            this.btnIrInventario.Name = "btnIrInventario";
-            this.btnIrInventario.Size = new System.Drawing.Size(75, 23);
-            this.btnIrInventario.TabIndex = 0;
-            this.btnIrInventario.Text = "button3";
-            this.btnIrInventario.UseVisualStyleBackColor = false;
-            this.btnIrInventario.Click += new System.EventHandler(this.btnIrInventario_Click);
+            this.btnPantallaInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
+            this.btnPantallaInventario.FlatAppearance.BorderSize = 0;
+            this.btnPantallaInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPantallaInventario.Location = new System.Drawing.Point(23, 66);
+            this.btnPantallaInventario.Name = "btnPantallaInventario";
+            this.btnPantallaInventario.Size = new System.Drawing.Size(75, 23);
+            this.btnPantallaInventario.TabIndex = 0;
+            this.btnPantallaInventario.Text = "button3";
+            this.btnPantallaInventario.UseVisualStyleBackColor = false;
+            this.btnPantallaInventario.Click += new System.EventHandler(this.btnIrInventario_Click);
             // 
             // btnIrUsuarios
             // 
@@ -313,32 +322,34 @@
             this.btnActualizarDatos.Text = "Actualizar Datos";
             this.btnActualizarDatos.UseVisualStyleBackColor = true;
             // 
-            // btnCerrarSesion
+            // btnSalir
             // 
-            this.btnCerrarSesion.Location = new System.Drawing.Point(419, 183);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(159, 41);
-            this.btnCerrarSesion.TabIndex = 9;
-            this.btnCerrarSesion.Text = "Cerrar sesión";
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnSalir.Location = new System.Drawing.Point(419, 183);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(159, 41);
+            this.btnSalir.TabIndex = 9;
+            this.btnSalir.Text = "Cerrar sesión";
+            this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // btnIrClientes
+            // btnPantallaClientes
             // 
-            this.btnIrClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.btnIrClientes.FlatAppearance.BorderSize = 0;
-            this.btnIrClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIrClientes.Location = new System.Drawing.Point(34, 69);
-            this.btnIrClientes.Name = "btnIrClientes";
-            this.btnIrClientes.Size = new System.Drawing.Size(75, 23);
-            this.btnIrClientes.TabIndex = 0;
-            this.btnIrClientes.Text = "button1";
-            this.btnIrClientes.UseVisualStyleBackColor = false;
-            this.btnIrClientes.Click += new System.EventHandler(this.btnIrClientes_Click);
+            this.btnPantallaClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
+            this.btnPantallaClientes.FlatAppearance.BorderSize = 0;
+            this.btnPantallaClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPantallaClientes.Location = new System.Drawing.Point(34, 69);
+            this.btnPantallaClientes.Name = "btnPantallaClientes";
+            this.btnPantallaClientes.Size = new System.Drawing.Size(75, 23);
+            this.btnPantallaClientes.TabIndex = 0;
+            this.btnPantallaClientes.Text = "button1";
+            this.btnPantallaClientes.UseVisualStyleBackColor = false;
+            this.btnPantallaClientes.Click += new System.EventHandler(this.btnIrClientes_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(65)))));
-            this.groupBox1.Controls.Add(this.btnIrClientes);
+            this.groupBox1.Controls.Add(this.btnPantallaClientes);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.groupBox1.Location = new System.Drawing.Point(27, 29);
             this.groupBox1.Name = "groupBox1";
@@ -392,16 +403,16 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnIrUsuarios;
-        private System.Windows.Forms.Button btnIrInventario;
-        private System.Windows.Forms.Button btnIrServicio;
+        private System.Windows.Forms.Button btnPantallaInventario;
+        private System.Windows.Forms.Button btnPantallaServicios;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizarDatos;
         private System.Windows.Forms.Label lblEstadoBD;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnIrClientes;
+        private System.Windows.Forms.Button btnPantallaClientes;
     }
 }
