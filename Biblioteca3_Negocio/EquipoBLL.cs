@@ -61,5 +61,17 @@ namespace Biblioteca3_Negocio
             return new EquipoDAL().ListarMarcas();
         }
 
+        public bool EditarEquipo(Equipo equipo)
+        {
+            EquipoDAL equipoDal = new EquipoDAL();
+            return equipoDal.EditarEquipo(equipo); 
+        }
+
+        public bool EliminarEquipo(int idEquipo)
+        {
+            EquipoDAL equipoDal = new EquipoDAL();
+            return equipoDal.EliminarEquipo(idEquipo);
+        }
+
     } // Fin class
 }

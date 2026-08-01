@@ -1,8 +1,4 @@
-﻿// Agregar referencias
-using Biblioteca1_Modelo;
-using Biblioteca2_Datos;
-using Biblioteca3_Negocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using Biblioteca1_Modelo;
+using Biblioteca2_Datos;
+using Biblioteca3_Negocio;
 
 namespace MetaNova
 {
@@ -60,20 +60,18 @@ namespace MetaNova
 
                 RefaccionBLL refaccionBll = new RefaccionBLL();
 
-                // Evaluamos según el ID seleccionado
+                // Determinar si es registro nuevo o actualizacion
                 if (idRefaccionSeleccionada == 0)
                 {
-                    // Es un registro nuevo
                     refaccionBll.GuardarRefaccion(refaccion);
                 }
                 else
                 {
-                    // Es una edición
                     refaccionBll.ActualizarRefaccion(refaccion);
                 }
 
                 CargarRefacciones();
-                LimpiarCampos(); // Limpia los campos y resetea idRefaccionSeleccionada a 0
+                LimpiarCampos();
             }
             catch (Exception ex)
             {
@@ -86,14 +84,12 @@ namespace MetaNova
             LimpiarCampos();
         }
 
-        
         private void LimpiarCampos()
         {
             txtNombreRefaccion.Clear();
             txtPrecioUnitario.Clear();
             txtCantidadDisponible.Clear();
 
-           
             idRefaccionSeleccionada = 0;
 
             txtNombreRefaccion.Focus();
@@ -101,22 +97,18 @@ namespace MetaNova
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            //  Validar que el usuario haya seleccionado una fila válida
             if (dgvInventario.CurrentRow == null || dgvInventario.CurrentRow.Index < 0)
             {
                 MessageBox.Show("Por favor, selecciona una refacción de la tabla.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Guardar el ID en la variable del formulario
+            // Mapeo manual a controles
             idRefaccionSeleccionada = Convert.ToInt32(dgvInventario.CurrentRow.Cells[0].Value);
-
-            // Pasar los valores de las celdas a las cajas de texto 
             txtNombreRefaccion.Text = dgvInventario.CurrentRow.Cells[1].Value?.ToString();
             txtPrecioUnitario.Text = dgvInventario.CurrentRow.Cells[2].Value?.ToString();
             txtCantidadDisponible.Text = dgvInventario.CurrentRow.Cells[3].Value?.ToString();
 
-            
             txtCantidadDisponible.Focus();
         }
 
@@ -128,10 +120,8 @@ namespace MetaNova
                 return;
             }
 
-            //  Obtener el ID de la refacción seleccionada 
             int idRefaccion = Convert.ToInt32(dgvInventario.CurrentRow.Cells[0].Value);
 
-            //  Confirmar con el usuario antes de borrar
             DialogResult respuesta = MessageBox.Show(
                 "¿Estás seguro de que deseas eliminar esta refacción del catálogo?",
                 "Confirmar eliminación",
@@ -143,11 +133,9 @@ namespace MetaNova
             {
                 try
                 {
-                    //  Llamar a BLL para realizar el borrado
                     RefaccionBLL refaccionBll = new RefaccionBLL();
                     refaccionBll.EliminarRefaccion(idRefaccion);
 
-                    //  Refrescar la tabla y resetear los campos
                     CargarRefacciones();
                     LimpiarCampos();
                 }
@@ -158,12 +146,9 @@ namespace MetaNova
             }
         }
 
-
-
-
         private void Inventario_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // Buscamos si el Menú Principal ya está abierto para volver a mostrarlo
+            // Reabrir menu si ya estaba abierto en segundo plano
             foreach (Form frm in Application.OpenForms)
             {
                 if (frm is Menu_Principal)
@@ -173,13 +158,8 @@ namespace MetaNova
                 }
             }
 
-            // Si por alguna razón no estuviera en memoria, abrimos una nueva instancia del menú
             Menu_Principal menu = new Menu_Principal();
             menu.Show();
         }
-
-
-
-
     }
 }

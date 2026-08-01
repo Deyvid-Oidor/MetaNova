@@ -102,5 +102,55 @@ namespace Biblioteca2_Datos
             return lista;
         }
 
+        public bool EditarEquipo(Equipo equipo)
+        {
+            bool respuesta = false;
+            Conexion cn = new Conexion();
+
+            if (cn.conectar())
+            {
+                MySqlCommand cmd = cn.construye_command(
+                    "UPDATE equipos SET id_Marca = @idMarca, modelo = @modelo, numero_serie = @serie " +
+                    "WHERE id_equipo = @idEquipo");
+
+                cmd.Parameters.AddWithValue("@idMarca", equipo.IdMarca);
+                cmd.Parameters.AddWithValue("@modelo", equipo.Modelo);
+                cmd.Parameters.AddWithValue("@serie", equipo.NumeroSerie);
+                cmd.Parameters.AddWithValue("@idEquipo", equipo.IdEquipo);
+
+                int filasAfectadas = cn.ejecutanonquery();
+                if (filasAfectadas > 0)
+                {
+                    respuesta = true;
+                }
+
+                cn.desconectar();
+            }
+
+            return respuesta;
+        }
+
+        public bool EliminarEquipo(int idEquipo)
+        {
+            bool respuesta = false;
+            Conexion cn = new Conexion();
+
+            if (cn.conectar())
+            {
+                MySqlCommand cmd = cn.construye_command("DELETE FROM equipos WHERE id_equipo = @idEquipo");
+                cmd.Parameters.AddWithValue("@idEquipo", idEquipo);
+
+                int filasAfectadas = cn.ejecutanonquery();
+                if (filasAfectadas > 0)
+                {
+                    respuesta = true;
+                }
+
+                cn.desconectar();
+            }
+
+            return respuesta;
+        }
+
     } // Fin class
 }

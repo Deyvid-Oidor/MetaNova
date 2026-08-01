@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-// Agregar referencias
+
 using Biblioteca1_Modelo;
 using Biblioteca2_Datos;
 using Biblioteca3_Negocio;
@@ -38,6 +38,7 @@ namespace MetaNova
 
         private void Login_Resize(object sender, EventArgs e)
         {
+            // Centrado dinamico del panel contenedor
             pnlContenedor.Location = new Point((this.ClientSize.Width - pnlContenedor.Width) / 2, (this.ClientSize.Height - pnlContenedor.Height) / 2);
         }
 
@@ -63,10 +64,8 @@ namespace MetaNova
             {
                 MessageBox.Show($"¡Bienvenido, {usuarioLogueado.Nombre}!", "Acceso Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-               
+                // Señal para el Form principal antes de cerrar
                 this.DialogResult = DialogResult.OK;
-
-               
                 this.Close();
             }
             else
@@ -88,4 +87,3 @@ namespace MetaNova
         }
     }
 }
-

@@ -218,5 +218,60 @@ namespace Biblioteca2_Datos
             }
             return lista;
         }
+
+        public int Actualizar(Servicio s)
+        {
+            Conexion cn = new Conexion();
+            int afectados = 0;
+
+            if (cn.conectar())
+            {
+                MySqlCommand cmd = cn.construye_command(
+                    "UPDATE servicios SET " +
+                    "id_equipo = @idEquipo, " +
+                    "id_TipoServicio = @idTipo, " +
+                    "id_usuario = @idUsuario, " +
+                    "id_Estado_Equipo = @idEstado, " +
+                    "costo_mano_obra = @costo " +
+                    "WHERE id_servicio = @idServicio");
+
+                cmd.Parameters.AddWithValue("@idEquipo", s.IdEquipo);
+                cmd.Parameters.AddWithValue("@idTipo", s.IdTipoServicio);
+                cmd.Parameters.AddWithValue("@idUsuario", s.IdUsuario);
+                cmd.Parameters.AddWithValue("@idEstado", s.IdEstadoEquipo);
+                cmd.Parameters.AddWithValue("@costo", s.CostoManoObra);
+                cmd.Parameters.AddWithValue("@idServicio", s.IdServicio);
+
+                afectados = cmd.ExecuteNonQuery();
+                cn.desconectar();
+            }
+            return afectados;
+        }
+
+        public int Eliminar(int idServicio)
+        {
+            Conexion cn = new Conexion();
+            int afectados = 0;
+
+            if (cn.conectar())
+            {
+                // Primero eliminamos los detalles asociados para no romper la clave foránea (FK)
+                MySqlCommand cmdDetalle = cn.construye_command(
+                    "DELETE FROM servicio_detalle WHERE id_servicio = @idServicio");
+                cmdDetalle.Parameters.AddWithValue("@idServicio", idServicio);
+                cmdDetalle.ExecuteNonQuery();
+
+                // Luego eliminamos el registro principal de servicios
+                MySqlCommand cmdServicio = cn.construye_command(
+                    "DELETE FROM servicios WHERE id_servicio = @idServicio");
+                cmdServicio.Parameters.AddWithValue("@idServicio", idServicio);
+
+                afectados = cmdServicio.ExecuteNonQuery();
+                cn.desconectar();
+            }
+            return afectados;
+        }
+
+
     }
 }

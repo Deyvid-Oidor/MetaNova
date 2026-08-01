@@ -114,5 +114,44 @@ namespace Biblioteca3_Negocio
         }
 
 
+
+        public bool ActualizarServicio(Servicio s)
+        {
+            if (s.IdServicio <= 0)
+            {
+                MessageBox.Show("Seleccione una orden válida para actualizar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (s.CostoManoObra < 0)
+            {
+                MessageBox.Show("El costo de mano de obra no puede ser negativo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (s.IdEquipo <= 0 || s.IdUsuario <= 0 || s.IdTipoServicio <= 0 || s.IdEstadoEquipo <= 0)
+            {
+                MessageBox.Show("Faltan datos obligatorios de la orden.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Llama al método Actualizar de ServicioDAL
+            int filasAfectadas = new ServicioDAL().Actualizar(s);
+            return filasAfectadas > 0;
+        }
+
+        public bool EliminarServicio(int idServicio)
+        {
+            if (idServicio <= 0)
+            {
+                MessageBox.Show("Seleccione una orden válida para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Llama al método Eliminar de ServicioDAL
+            int filasAfectadas = new ServicioDAL().Eliminar(idServicio);
+            return filasAfectadas > 0;
+        }
+
     } // Fin class
 }

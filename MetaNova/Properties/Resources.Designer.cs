@@ -59,5 +59,15 @@ namespace MetaNova.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO_PROYECTO {
+            get {
+                object obj = ResourceManager.GetObject("LOGO PROYECTO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

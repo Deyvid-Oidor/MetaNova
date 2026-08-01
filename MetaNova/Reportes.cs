@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-// Agregar referencias
+
 using Biblioteca1_Modelo;
 using Biblioteca2_Datos;
 using Biblioteca3_Negocio;
@@ -17,6 +17,7 @@ namespace MetaNova
     public partial class Reportes : Form
     {
         private int idServicioSeleccionado = 0;
+
         public Reportes()
         {
             InitializeComponent();
@@ -56,26 +57,24 @@ namespace MetaNova
                 return;
             }
 
-           
             if (cmbCambiarEstado.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor, selecciona un estado válido.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-           
+            // Mapeo directo segun indice del combo
             int idEstadoNuevo = cmbCambiarEstado.SelectedIndex + 1;
 
             ServicioBLL bll = new ServicioBLL();
             bll.ActualizarEstado(idServicioSeleccionado, idEstadoNuevo);
 
-            // Refrescar la tabla para mostrar el cambio de inmediato
             btnBuscar_Click(sender, e);
         }
 
         private void dgvReportes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dgvReportes_CellClick(object sender, DataGridViewCellEventArgs e)

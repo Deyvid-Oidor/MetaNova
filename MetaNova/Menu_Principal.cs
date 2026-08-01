@@ -1,9 +1,4 @@
-﻿// Agregar referencias
-using Biblioteca1_Modelo;
-using Biblioteca2_Datos;
-using Biblioteca3_Negocio;
-using MySqlX.XDevAPI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using Biblioteca1_Modelo;
+using Biblioteca2_Datos;
+using Biblioteca3_Negocio;
 
 namespace MetaNova
 {
@@ -28,6 +27,7 @@ namespace MetaNova
             frmClientes.Show();
         }
 
+        #region Hover Effects
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             btnPantallaClientes.BackColor = ColorTranslator.FromHtml("#1E293B");
@@ -36,24 +36,9 @@ namespace MetaNova
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            // Cambia estos valores por los colores originales que tiene tu botón
             btnPantallaClientes.BackColor = Color.FromArgb(241, 245, 249);
             btnPantallaClientes.ForeColor = Color.Black;
         }
-
-
-        //private void button2_MouseEnter(object sender, EventArgs e)
-        //{
-        //    button2.BackColor = ColorTranslator.FromHtml("#1E293B");
-        //    button2.ForeColor = Color.White;
-        //}
-
-
-        //private void button2_MouseLeave(object sender, EventArgs e)
-        //{
-        //    button2.BackColor = Color.FromArgb(241, 245, 249); // Color base
-        //    button2.ForeColor = Color.Black;
-        //}
 
         private void button3_MouseEnter(object sender, EventArgs e)
         {
@@ -63,10 +48,9 @@ namespace MetaNova
 
         private void button3_MouseLeave(object sender, EventArgs e)
         {
-            btnPantallaServicios.BackColor = Color.FromArgb(241, 245, 249); // Color base
+            btnPantallaServicios.BackColor = Color.FromArgb(241, 245, 249);
             btnPantallaServicios.ForeColor = Color.Black;
         }
-
 
         private void button4_MouseEnter(object sender, EventArgs e)
         {
@@ -76,22 +60,9 @@ namespace MetaNova
 
         private void button4_MouseLeave(object sender, EventArgs e)
         {
-            btnPantallaInventario.BackColor = Color.FromArgb(241, 245, 249); // Color base
+            btnPantallaInventario.BackColor = Color.FromArgb(241, 245, 249);
             btnPantallaInventario.ForeColor = Color.Black;
         }
-
-        
-        //private void button5_MouseEnter(object sender, EventArgs e)
-        //{
-        //    button5.BackColor = ColorTranslator.FromHtml("#1E293B");
-        //    button5.ForeColor = Color.White;
-        //}
-
-        //private void button5_MouseLeave(object sender, EventArgs e)
-        //{
-        //    button5.BackColor = Color.FromArgb(241, 245, 249); // Color base
-        //    button5.ForeColor = Color.Black;
-        //}
 
         private void btnSalir_MouseEnter(object sender, EventArgs e)
         {
@@ -101,13 +72,13 @@ namespace MetaNova
 
         private void btnSalir_MouseLeave(object sender, EventArgs e)
         {
-            btnSalir.BackColor = Color.FromArgb(15, 23, 42); // Color base oscuro
-            btnSalir.ForeColor = Color.FromArgb(203, 213, 225); // Color gris claro (o rojo suave)
+            btnSalir.BackColor = Color.FromArgb(15, 23, 42);
+            btnSalir.ForeColor = Color.FromArgb(203, 213, 225);
         }
+        #endregion
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            // Cierra la aplicación por completo (o puedes usar this.Close(); si solo quieres volver al Login)
             Application.Exit();
         }
 
@@ -164,13 +135,12 @@ namespace MetaNova
 
         }
 
+        
         private void btnIrClientes_Click(object sender, EventArgs e)
         {
-
             Clientes_Equipos frm = new Clientes_Equipos();
-            frm.Show(); // Abre la ventana
-            this.Hide(); // Oculta el menú principal mientras estás en el módulo
-
+            frm.Show();
+            this.Hide();
         }
 
         private void btnIrServicio_Click(object sender, EventArgs e)
