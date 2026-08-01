@@ -135,7 +135,7 @@ namespace MetaNova
 
         }
 
-        
+
         private void btnIrClientes_Click(object sender, EventArgs e)
         {
             Clientes_Equipos frm = new Clientes_Equipos();
@@ -163,5 +163,39 @@ namespace MetaNova
             frm.Show();
             this.Hide();
         }
+
+
+
+
+
+
+        private void tableLayoutPanel1_Resize(object sender, EventArgs e)
+        {
+            // Calcula un tamaño proporcional basado en el alto del TableLayoutPanel
+            int alturaFila = tableLayoutPanel1.Height / 2;
+            float tamanioBoton = alturaFila * 0.08f;
+            float tamanioGroupBox = alturaFila * 0.055f; // Tamaño proporcional para el texto del GroupBox
+
+            if (tamanioBoton < 10) tamanioBoton = 10;
+            if (tamanioGroupBox < 8) tamanioGroupBox = 8;
+
+            // Aplica el cambio de tamaño de fuente a los botones
+            btnPantallaClientes.Font = new Font(btnPantallaClientes.Font.FontFamily, tamanioBoton, FontStyle.Bold);
+            btnPantallaServicios.Font = new Font(btnPantallaServicios.Font.FontFamily, tamanioBoton, FontStyle.Bold);
+            btnPantallaInventario.Font = new Font(btnPantallaInventario.Font.FontFamily, tamanioBoton, FontStyle.Bold);
+            btnIrUsuarios.Font = new Font(btnIrUsuarios.Font.FontFamily, tamanioBoton, FontStyle.Bold);
+
+            // Aplica el cambio de tamaño de fuente a los textos de los GroupBox
+            // (Cambia groupBox1, groupBox2, etc., por los nombres reales de tus GroupBox)
+            groupBox1.Font = new Font(groupBox1.Font.FontFamily, tamanioGroupBox, FontStyle.Bold);
+            groupBox2.Font = new Font(groupBox2.Font.FontFamily, tamanioGroupBox, FontStyle.Bold);
+            groupBox3.Font = new Font(groupBox3.Font.FontFamily, tamanioGroupBox, FontStyle.Bold);
+            groupBox4.Font = new Font(groupBox4.Font.FontFamily, tamanioGroupBox, FontStyle.Bold);
+        }
+
+
+
+
+
     }
 }

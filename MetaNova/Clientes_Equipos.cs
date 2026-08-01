@@ -406,5 +406,10 @@ namespace MetaNova
                 }
             }
         }
+
+        private void pnlDerecho_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -74,6 +74,16 @@ namespace MetaNova
                 txtContrasena.Clear();
                 txtContrasena.Focus();
             }
+
+
+
+            
+
+
+
+
+
+
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
