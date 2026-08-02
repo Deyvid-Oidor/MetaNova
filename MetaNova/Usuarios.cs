@@ -36,7 +36,7 @@ namespace MetaNova
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // 1. Validamos que los campos no estén vacíos
+            // Validamos que los campos no estén vacíos
             // (Asegúrate de cambiar textBox1, textBox2 y textBox3 por los nombres reales de tus cajas de texto si se llaman diferente)
             if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
             {
@@ -135,14 +135,14 @@ namespace MetaNova
 
         private void button4_Click(object sender, EventArgs e)
         {
-            // 1. Validamos que al menos esté escrito el nombre del usuario a eliminar
+            // Validamos que al menos esté escrito el nombre del usuario a eliminar
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
                 MessageBox.Show("Por favor ingresa o selecciona el nombre del usuario a eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // 2. Mensaje de confirmación para evitar accidentes
+            // Mensaje de confirmación para evitar accidentes
             DialogResult resultado = MessageBox.Show("¿Estás seguro de eliminar este usuario?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
@@ -214,7 +214,96 @@ namespace MetaNova
             CargarTablaUsuarios();
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Por favor selecciona un usuario de la tabla para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            string conexionString = "server=localhost;database=metanova;uid=root;pwd=;";
+
+            using (MySqlConnection conexion = new MySqlConnection(conexionString))
+            {
+                try
+                {
+                    conexion.Open();
+                    string query = "UPDATE usuarios SET contrasena = @contrasena, rol = @rol WHERE nombre = @nombre;";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@nombre", textBox1.Text.Trim());
+                        cmd.Parameters.AddWithValue("@contrasena", textBox2.Text.Trim());
+                        cmd.Parameters.AddWithValue("@rol", textBox3.Text.Trim());
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Usuario actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Limpiamos y refrescamos la tabla
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox1.Focus();
+
+                    CargarTablaUsuarios(); // Actualiza el DataGridView al instante
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al actualizar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            // Validamos que haya un usuario seleccionado (cuyo nombre esté en el campo)
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Por favor selecciona un usuario de la tabla para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Mensaje de confirmación para evitar borrados accidentales
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de eliminar este usuario?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                string conexionString = "server=localhost;database=metanova;uid=root;pwd=;";
+
+                using (MySqlConnection conexion = new MySqlConnection(conexionString))
+                {
+                    try
+                    {
+                        conexion.Open();
+                        // Consulta SQL para eliminar el usuario buscando por su nombre
+                        string query = "DELETE FROM usuarios WHERE nombre = @nombre;";
+
+                        using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                        {
+                            cmd.Parameters.AddWithValue("@nombre", textBox1.Text.Trim());
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("Usuario eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Limpiamos los campos y actualizamos la tabla al instante
+                        textBox1.Clear();
+                        textBox2.Clear();
+                        textBox3.Clear();
+                        textBox1.Focus();
+
+                        CargarTablaUsuarios(); // Refresca el DataGridView
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al eliminar el usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
 
 
     }
