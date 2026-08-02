@@ -18,17 +18,10 @@ namespace MetaNova
 {
     public partial class Menu_Principal : Form
     {
-        public Menu_Principal(string nombreUsuario)
+        public Menu_Principal()
         {
             InitializeComponent();
-
-           
-            
         }
-
-    
-        
-
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -91,11 +84,6 @@ namespace MetaNova
             Application.Exit();
         }
 
-        private void Menu_Principal_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnPantallaServicios_Click(object sender, EventArgs e)
         {
             Servicio frmServicios = new Servicio();
@@ -113,38 +101,7 @@ namespace MetaNova
             Reportes frmClientes = new Reportes();
             frmClientes.Show();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
+      
         private void btnIrClientes_Click(object sender, EventArgs e)
         {
             Clientes_Equipos frm = new Clientes_Equipos();
@@ -172,12 +129,6 @@ namespace MetaNova
             frm.Show();
             this.Hide();
         }
-
-
-
-
-
-
         private void tableLayoutPanel1_Resize(object sender, EventArgs e)
         {
             // Calcula un tamaño proporcional basado en el alto del TableLayoutPanel
@@ -195,21 +146,25 @@ namespace MetaNova
             btnIrUsuarios.Font = new Font(btnIrUsuarios.Font.FontFamily, tamanioBoton, FontStyle.Bold);
 
             // Aplica el cambio de tamaño de fuente a los textos de los GroupBox
-            // (Cambia groupBox1, groupBox2, etc., por los nombres reales de tus GroupBox)
             groupBox1.Font = new Font(groupBox1.Font.FontFamily, tamanioGroupBox, FontStyle.Bold);
             groupBox2.Font = new Font(groupBox2.Font.FontFamily, tamanioGroupBox, FontStyle.Bold);
             groupBox3.Font = new Font(groupBox3.Font.FontFamily, tamanioGroupBox, FontStyle.Bold);
             groupBox4.Font = new Font(groupBox4.Font.FontFamily, tamanioGroupBox, FontStyle.Bold);
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSalir_Click_1(object sender, EventArgs e)
         {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas cerrar sesión?", "Cerrar Sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (resultado == DialogResult.Yes)
+            {
+
+                Login login = new Login();
+                login.Show();
+
+                this.Close();
+            }
         }
+
     }
 }

@@ -66,12 +66,6 @@ namespace MetaNova
             {
                 MessageBox.Show($"¡Bienvenido, {usuarioLogueado.Nombre}!", "Acceso Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // --- AGREGA ESTAS DOS LÍNEAS AQUÍ ---
-                Menu_Principal menu = new Menu_Principal(usuarioLogueado.Nombre);
-                menu.Show();
-                // -------------------------------------
-
-
 
                 // Señal para el Form principal antes de cerrar
                 this.DialogResult = DialogResult.OK;

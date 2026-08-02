@@ -23,11 +23,6 @@ namespace MetaNova
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Inventario_Load(object sender, EventArgs e)
         {
             CargarRefacciones();
@@ -161,5 +156,7 @@ namespace MetaNova
             Menu_Principal menu = new Menu_Principal();
             menu.Show();
         }
+
+       
     }
 }

@@ -21,11 +21,6 @@ namespace MetaNova
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Clientes_Equipos_Load(object sender, EventArgs e)
         {
             try
@@ -95,16 +90,6 @@ namespace MetaNova
             txtNombre.Focus();
         }
 
-        private void dvgClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (dvgClientes.CurrentRow == null || dvgClientes.CurrentRow.IsNewRow)
@@ -160,11 +145,6 @@ namespace MetaNova
             }
         }
 
-        private void pnlBuscador_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Clientes_Equipos_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Reabrir menu si ya estaba abierto en segundo plano
@@ -179,16 +159,6 @@ namespace MetaNova
 
             Menu_Principal menu = new Menu_Principal();
             menu.Show();
-        }
-
-        private void cmbMarcas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlFormulario_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnEliminarCliente_Click(object sender, EventArgs e)
@@ -383,11 +353,6 @@ namespace MetaNova
             }
         }
 
-        private void dgvEquipos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dvgClientes_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && dvgClientes.CurrentRow != null)
@@ -407,9 +372,5 @@ namespace MetaNova
             }
         }
 
-        private void pnlDerecho_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
