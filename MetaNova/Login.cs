@@ -52,6 +52,8 @@ namespace MetaNova
 
         }
 
+        public string NombreUsuarioLogueado = "";
+
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             string nombre = txtUsuario.Text.Trim();
@@ -64,6 +66,13 @@ namespace MetaNova
             {
                 MessageBox.Show($"¡Bienvenido, {usuarioLogueado.Nombre}!", "Acceso Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                // --- AGREGA ESTAS DOS LÍNEAS AQUÍ ---
+                Menu_Principal menu = new Menu_Principal(usuarioLogueado.Nombre);
+                menu.Show();
+                // -------------------------------------
+
+
+
                 // Señal para el Form principal antes de cerrar
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -74,13 +83,6 @@ namespace MetaNova
                 txtContrasena.Clear();
                 txtContrasena.Focus();
             }
-
-
-
-            
-
-
-
 
 
 

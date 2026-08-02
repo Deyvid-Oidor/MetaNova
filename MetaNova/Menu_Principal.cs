@@ -12,14 +12,23 @@ using Biblioteca1_Modelo;
 using Biblioteca2_Datos;
 using Biblioteca3_Negocio;
 
+using MySql.Data.MySqlClient;
+
 namespace MetaNova
 {
     public partial class Menu_Principal : Form
     {
-        public Menu_Principal()
+        public Menu_Principal(string nombreUsuario)
         {
             InitializeComponent();
+
+           
+            
         }
+
+    
+        
+
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -193,9 +202,14 @@ namespace MetaNova
             groupBox4.Font = new Font(groupBox4.Font.FontFamily, tamanioGroupBox, FontStyle.Bold);
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
