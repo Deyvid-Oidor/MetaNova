@@ -91,5 +91,10 @@ namespace MetaNova
         {
 
         }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
