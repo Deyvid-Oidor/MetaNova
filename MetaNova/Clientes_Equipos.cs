@@ -52,9 +52,32 @@ namespace MetaNova
                 MessageBox.Show($"Error al cargar clientes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        // Valida que el teléfono contenga SOLO dígitos.
+        private bool EsTelefonoValido(string telefono)
+        {
+            if (string.IsNullOrWhiteSpace(telefono))
+                return false;
+
+            foreach (char c in telefono)
+            {
+                if (!char.IsDigit(c))
+                    return false; // encontró una letra, espacio o símbolo -> inválido
+            }
+
+            // Ajusta este número si tu formato de teléfono no es a 10 dígitos
+            return telefono.Length == 10;
+        }
 
         private void btnGuardarCliente_Click(object sender, EventArgs e)
         {
+            // Validar teléfono ANTES de armar el objeto y mandarlo al BLL
+            if (!EsTelefonoValido(txtTelefono.Text.Trim()))
+            {
+                MessageBox.Show("El teléfono debe contener solo números, sin letras ni símbolos (10 dígitos).",
+                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // se detiene aquí, no llega al BLL
+            }
+
             try
             {
                 Cliente cliente = new Cliente()
@@ -101,6 +124,14 @@ namespace MetaNova
             if (cmbMarcas.SelectedValue == null || string.IsNullOrWhiteSpace(txtModelo.Text))
             {
                 MessageBox.Show("Complete los datos requeridos del equipo.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validar teléfono ANTES de armar el objeto y mandarlo al BLL
+            if (!EsTelefonoValido(txtTelefono.Text.Trim()))
+            {
+                MessageBox.Show("El teléfono debe contener solo números, sin letras ni símbolos (10 dígitos).",
+                    "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
